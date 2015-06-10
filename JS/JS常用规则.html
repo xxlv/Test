@@ -1,0 +1,207 @@
+<script>
+
+////////////////////////////////////////值///////////////////////////////////////////////////*
+//简单传递值
+// string
+// number
+// boolean
+// null
+// undefined
+var foo=1,bar=foo;
+bar=9;
+// console.log(foo,bar)// 1,9
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+////////////////////////////////////////引用//////////////////////////////////////////////////////*
+// 复杂传递引用
+// object
+// array
+// function  
+var foo=[1,2],bar=foo;
+bar[0]=9
+// console.log(foo[0],bar[0])	//9,9
+////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+//////////////////////使用字面量创建//////////////////////////////////////////////////////////////*
+
+var item=new Object();// bad way
+var item2={}// good
+// console.log(item,item2)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+//////////////////////不要使用保留字作为键///////////////////////////////////////////////////////*
+
+var superman={//bad
+	class:'hero',
+	default:{clark:'kent'},
+	private:true
+
+}
+
+var superman={//good
+	kclass:'hero',
+	defaults:{clark:'kent'},
+	hidden:true
+}
+
+// console.log(superman)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+//////////////////////数组///////////////////////////////////////////////////////*
+var items=new Array();//bad
+var items=[];//good
+//如果不知道数组的长度
+items[items.length]='abd'//bad
+items.push('abc')//good
+
+
+//数组拷贝
+var len=items.length,itemcopy=[],i;
+for (i=0;i<len;i++){
+	itemcopy[i]=items[i]
+}//bad
+
+// console.log(itemcopy)
+items=[1,2,3,4,5,6]
+itemcopy=items.slice()//good
+// console.log(itemcopy)
+
+
+//用slice将类数组的对象转成数组.
+function trigger(arguments){
+	var args=Array.prototype.slice.call(arguments)
+	return args	
+}
+ var a={length:1,0:'f',1:'s'}
+ var b=trigger(a)	 
+ // console.log(a)
+ // console.log(b)
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+//////////////////////字符串////////////////////////////////////////////////////////////////////////*
+
+//对字符串使用单引号
+var name="Hello" //bad
+var name2='Hello'//good
+//超过80个字符的字符串应该使用字符串连接换行
+//如果过度使用，长字符串连接可能会对性能有影响
+
+//bad
+var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+//bad
+// bad
+var errorMessage = 'This is a super long error that \
+was thrown because of Batman. \
+When you stop to think about \
+how Batman had anything to do \
+with this, you would get nowhere \
+fast.';
+// good
+var errorMessage = 'This is a super long error that ' +
+  'was thrown because of Batman.' +
+  'When you stop to think about ' +
+  'how Batman had anything to do ' +
+  'with this, you would get nowhere ' +
+  'fast.';
+
+
+
+
+var item=[1,2,3,4,5];
+
+// console.log('<ul><li>'+item.join('</li><li>')+'</li></ul>')
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+//////////////////////函数////////////////////////////////////////////////////////////////////////*
+//匿名函数
+var anonymous=function(){
+	return true;
+};
+
+//有名函数
+var named=function named(){
+	return true;
+};
+
+(function(){
+	console.log('Hello word')
+})();
+
+//绝对不要在一个非函数块里声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但是它们解析不同。
+
+// bad
+if (true) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+ 
+// good
+if (true) {
+  var test = function test() {
+    console.log('Yup.');
+  };
+
+}
+//绝对不要把参数命名为 arguments, 这将会逾越函数作用域内传过来的 arguments 对象.
+function nope(name,options,arguments){//bad
+	//...stuff...
+}
+
+function nope2(name,options,args){//good
+
+}
+
+//当使用变量访问属性时使用中括号.
+var luke={
+	jedi:true,
+	age:18
+}
+//good   
+//why?----
+function getProp(prop){
+	return luke[prop]
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

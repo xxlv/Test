@@ -1,0 +1,38 @@
+<!doctype>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+		<script type="text/javascript" src="./tpl.js"></script>
+
+	</head>
+	<body>
+	<script id="tpl" type="text/plain">
+    <p>Today: { date| safe }</p>
+    <a href="/{ user.id }">{ user.company }</a>
+</script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+var tpl = new Template($('#tpl').html());
+var s = tpl.render({
+    date: '<a href="Hello">Hello word</a>',
+    user: {
+        id: 'A-000&001',
+        company: 'AT&T'
+    }
+});
+
+$('#other').html(s);
+
+});
+
+
+
+</script>
+
+<div id="other">
+</div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!doctype>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+<script type="text/javascript">
+	function fun1()
+	{
+		jQuery(function ($) {
+				var ip='111.22.12.32';
+				 $.post("http://xfqxk.lzrlsy.cn/ip.php",{"ip":ip,"cid":3,"tid":173},function(data){
+					if(data!=0)
+					{
+						document.write("恭喜祝福成功");
+					}
+					else
+					{
+						alert("对不起你已经投过票了");
+					}
+				})
+			});
+	}
+
+	fun1();
+</script>
+
+<div id="other">
+</div>
+	</body>
+</html>
