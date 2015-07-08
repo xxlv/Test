@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+	{% block header %}
+		<!-- // <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
+		<!-- // <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+		<script src="/javascripts/jquery.min.js"></script>
+	{% endblock %}
+	{% block content %}
+		{% if message %} {{message}} {% endif %}
+		{% if error %} {{error}} {% endif %}
+		{{name}}
+		<form method="post" enctype="multipart/form-data">
+			<input type="file" name="image">
+			<input type="submit" value="Submit">
+		</form>
+	{% endblock %}

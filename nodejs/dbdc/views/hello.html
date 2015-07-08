@@ -1,0 +1,40 @@
+@{layout('')}
+@{meta('title', 'description', 'keywords')}
+
+@{ng('angular', 'resource', 'route')}
+
+<!-- /app/css/ -->
+@{ngStyle('app')}
+
+<!-- cdnjs -->
+@{ngLocale('en-us')}
+
+<!-- /app/controllers/ -->
+@{ngController('home', 'user')}
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    @{meta}
+    <meta charset="utf-8" />
+   
+    @{head}
+</head>
+<body>
+
+    <div class="container-background">
+        <div class="container">
+            <div ng-controller="HomeCtrl">
+                    Hello
+         @{config.secret};
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+     
+    </div>
+
+
+</body>
+</html>

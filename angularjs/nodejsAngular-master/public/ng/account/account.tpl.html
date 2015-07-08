@@ -1,0 +1,242 @@
+<ng-include src="  BASE_URL+'/partial/_header.tpl.html'   "></ng-include>
+<div class="container-fluid no-padd">
+       <div class="col-lg-12 custom-cal-head">
+             <div class="col-lg-5">
+                    <div class="btn-group"  style="float:left;">
+                          <button class="btn btn-default dropdown-toggle btn-custom" type="button" data-toggle="dropdown" aria-expanded="false">
+                                <!-- <i class="fa fa-user"></i> -->
+                                <img class="img-circle" src="{{userImage}}{{image}}" height="32px" width="32px">&nbsp;&nbsp;{{user.first_name}}<span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                                <li>
+                                     <a href="javascript:void(0);" data-toggle="modal" data-target="#myDetails">
+                                          <div class="col-lg-9 no-padd">
+                                               <h4>{{LOCALE.MyDetails}} &raquo;</h4>
+                                          </div>
+                                          <div class="clearfix"></div>
+                                     </a>
+                                </li>
+                                <li>
+                                     <a href="{{LOGOUT_URL}}">
+                                          <div class="col-lg-9 no-padd">
+                                               <h4>{{LOCALE.SignOut}} &raquo;</h4>
+                                          </div>
+                                          <div class="clearfix"></div>
+                                     </a>
+                                </li>
+                          </ul>
+                    </div>
+                    <div class="cal-selectize view-select">
+                    <selectize config='config' options="viewOptions" ng-model="dateView"></selectize>
+                  </div>
+             </div> <!--col-lg-5finished-->
+             <div class="col-lg-6 no-padd">
+                    <label class="today-btn" data-today>{{LOCALE.Today}}</label>
+                    <div class="prev-month-wrap">
+                          <a class="prev-month-view" data-prev href="#/"><i class="fa fa-angle-left"></i></a>
+                          <span class="picker-date custom-date-title" data-title></span>
+                          <a class="prev-month-view" data-next href="#/"><i class="fa fa-angle-right"></i></a>
+                    </div>
+             </div><!--col-lg-6 finished-->
+             <div class="clearfix"></div>
+       </div>
+       <div  calendar class='calendar' ng-model="events"></div>
+</div>
+
+<div id="eventModal" class="modal fade cal-modals">
+     <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="event" ng-submit="createEvent(appointment)">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                              <span aria-hidden="true">×</span> <span class="sr-only">close</span>
+                        </button>
+                        <h4 id="modalTitle" class="modal-title">{{LOCALE.Appointment}}</h4>
+                  </div>
+                  <div class="per-details">
+                        <span>{{LOCALE.DETAILS}}</span>
+                  </div>
+                  <div id="modalBody" class="modal-body"> 
+                        <div class="form">
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.Reasons}}</label>
+                                     <div class="col-md-9">
+                                          <div class="cal-selectize">
+                                              <input required config='purposeConfig' options="userPurpose" ng-model="appointment.purpose" class="form-control ng-pristine ng-valid ng-touched"/>
+                                             <!-- <selectize required config='purposeConfig' options="userPurpose" ng-model="appointment.purpose"></selectize>-->
+                                          </div>                                           
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3"  for="contact">{{LOCALE.menu_contacts}}</label>
+                                     <div class="col-md-9">
+                                            <div class="cal-selectize">
+                                            <selectize required config='contactConfig' id="client" options="Contacts" ng-model="appointment.client_id"></selectize>
+                                          </div>
+                                           
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.Category}}</label>
+                                     <div class="col-md-9">
+                                            <selectize required config='categoryConfig' id="category" options="userCategories" ng-change='categoryChange(appointment.category_id)' ng-model="appointment.category_id"></selectize>
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.DateTime}}</label>
+                                     <div class="col-md-9">
+                                           <input required ng-model="appointment.start" datepicker class="form-control  picker-date" placeholder="{{LOCALE.MonDec}}"/>
+                                           <div class="cal-selectize time-selectize col-md-6">
+                                            <selectize required config='timeConfig' options="timeOptions" id="timeDrop" ng-model="appointment.time"></selectize>
+                                          </div>
+                                     </div>
+                               </div>
+                                <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.appointment_duration}}</label>
+                                     <div class="col-md-9">
+                                          <!-- <input id="duration" required ng-model="appointment.duration" type="number" class="form-control"/> -->
+                                          <select  id="duration" class="form-control" ng-options="option.value as option.text for option in durationOption" required ng-model="appointment.duration"></select>
+                                     </div>
+                                </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3" for="note1">{{LOCALE.Notes}}</label>
+                                     <div class="col-md-9">
+                                           <input type="text" id="note1" ng-model="appointment.description" class="form-control" placeholder="{{LOCALE.NoteInstructions}}"/>
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix" ng-repeat="question in questions">
+                                     <label class="question-label">{{question.question}}</label>
+                                     <div>
+                                          <div class="col-md-3"></div>
+                                          <div class="col-md-9">
+                                               <input required ng-if="question.type=='text'" ng-model="appointment.question[question.id]" class="form-control"/>
+                                               <select class="cal-selectize form-control" ng-options="option.id as option.option for option in question.option" required ng-if="question.type=='list'" ng-model="appointment.question[question.id]"></select>
+                                          </div>
+                                     </div>
+                               </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer">
+                        <button  class="btn btn-info col-lg-4 clearfix">{{LOCALE.Save}}</button>
+                  </div>
+                </form>
+            </div>
+    </div>
+</div> <!--/modal finished -->
+
+
+<div id="CategoryModel" class="modal fade cal-modals">
+     <div class="modal-dialog">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                              <span aria-hidden="true">×</span> <span class="sr-only">close</span>
+                        </button>
+                        <h4 id="modalTitle" class="modal-title">Add Category</h4>
+                  </div>
+                  <form name="category_form" ng-submit="addcategory(category)">
+                        <div id="modalBody" class="modal-body">
+                              <div class="form">
+                                     <div class="form-group clearfix">
+                                           <label class="col-md-3" for="category_name">{{LOCALE.Category}}</label>
+                                           <div class="col-md-9">
+                                                 <input type="text" name="category_name" ng-model="category.name"  required class="form-control" placeholder="{{LOCALE.Category}}"/>
+                                           </div>
+                                     </div>
+                                     <div class="form-group clearfix">
+                                           <label class="col-md-3" for="category_color">Color Code</label>
+                                           <div class="col-md-9">
+                                                <input class="form-control color" color type="text" name="category_color" required   ng-model="category.color"  placeholder="Color Code" />
+                                           </div>
+                                     </div>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                              <button class="btn btn-info col-lg-4 clearfix">{{LOCALE.Save}}</button>
+                        </div>
+                </form>
+            </div>
+    </div>
+</div> <!--/modal finished -->
+
+
+<div id="updateeventModal" class="modal fade cal-modals">
+     <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="event" ng-submit="updateEvent(appointment)">
+                  <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                              <span aria-hidden="true">×</span> <span class="sr-only">close</span>
+                        </button>
+                        <h4 id="updatemodalTitle" class="modal-title">{{LOCALE.Appointment}}</h4>
+                  </div>
+                  <div class="per-details">
+                        <span>{{LOCALE.DETAILS}}</span>
+                  </div>
+                  <input type="hidden" id="event-id" name="event" ng-model="appointment.id" />
+                  <div id="updatemodalBody" class="modal-body"> 
+                        <div class="form">
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.Reasons}}</label>
+                                     <div class="col-md-9">
+                                          <div class="cal-selectize">
+
+                                                <input required config='purposeConfig' options="userPurpose" ng-model="appointment.purpose" class="form-control ng-pristine ng-valid ng-touched"/>                                          </div>                                           
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3"  for="contact">{{LOCALE.menu_contacts}}</label>
+                                     <div class="col-md-9">
+                                          <selectize required config='contactConfig' options="Contacts" ng-model="appointment.client_id"></selectize>
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.Category}}</label>
+                                     <div class="col-md-9">
+                                          <selectize required config='categoryConfig' options="userCategories" ng-change='categoryChange(appointment.category_id)' ng-model="appointment.category_id"></selectize>
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3">{{LOCALE.DateTime}}</label>
+                                     <div class="col-md-9">
+                                           <input required ng-model="appointment.start" datepicker class="form-control  picker-date" placeholder="{{LOCALE.MonDec}}"/>
+                                           <div class="cal-selectize time-selectize col-md-6">
+                                            <selectize required config='timeConfig' options="timeOptions" ng-model="appointment.time"></selectize>
+                                           </div>
+                                     </div>
+                               </div>
+                                <div class="form-group clearfix">
+                                     <label class="col-md-3">Duration</label>
+                                     <div class="col-md-9">
+                                          <!-- <input required ng-model="appointment.duration" type="number" class="form-control"/> -->
+                                          <select  id="duration" class="form-control" ng-options="option.value as option.text for option in durationOption" required ng-model="appointment.duration"></select>
+                                     </div>
+                                </div>
+                               <div class="form-group clearfix">
+                                     <label class="col-md-3" for="updatenote1">{{LOCALE.Notes}}</label>
+                                     <div class="col-md-9">
+                                           <input type="text" id="updatenote1" ng-model="appointment.description" class="form-control" placeholder="{{LOCALE.NoteInstructions}}"/>
+                                     </div>
+                               </div>
+                               <div class="form-group clearfix" ng-repeat="question in questions">
+                                     <label class="question-label">{{question.question}}</label>
+                                     <div>
+                                          <div class="col-md-3"></div>
+                                          <div class="col-md-9">
+                                               <input required ng-if="question.type=='text'" ng-model="appointment.question[question.id]" class="form-control"/>
+                                               <select class="cal-selectize form-control" ng-options="option.id as option.option for option in question.option" required ng-if="question.type=='list'" ng-model="appointment.question[question.id]"></select>
+                                          </div>
+                                     </div>
+                               </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer">
+                        <button ng-if="appointment.status != 'cancelled_by_professionnel' && appointment.status != 'cancelled_by_client'" class="btn btn-info col-lg-4 clearfix">{{LOCALE.Save}}</button>
+                        <button class="btn btn-info col-lg-6 clearfix disabled" ng-if="appointment.status == 'cancelled_by_professionnel'">{{LOCALE.status_cancelled_by_professional}}</button>
+                        <button class="btn btn-info col-lg-6 clearfix disabled" ng-if="appointment.status == 'cancelled_by_client'">{{LOCALE.status_cancelled_by_client}}</button>
+                        <a ng-click="deleteEvent(appointment.id)" class="btn col-lg-4 btn-danger clearfix">{{LOCALE.Delete}}</a>
+                  </div>
+                </form>
+            </div>
+    </div>
+</div> <!--/modal finished -->

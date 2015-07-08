@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block header %}
+	
+{% endblock %}
+{% block content %}
+	{% if user %}
+		{{user.firstname}}
+	{% else %}
+	{% endif %}
+	<div ng-app="NaveenApp">
+		<div ng-controller="ApplicationController">
+			<div ng-view></div>
+		</div>
+	</div>
+{% endblock %}
+{% block footer %}
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/angular/angular.min.js"></script>
+	<script src="/javascripts/angular/angular-route.min.js"></script>
+	<script src="/javascripts/angular/angular-cookies.min.js"></script>
+	<script src="/javascripts/angular/angular-resource.min.js"></script>
+	<script src="/javascripts/angular/angular-file-upload-shim.js"></script>
+	<script src="/javascripts/angular/angular-file-upload.min.js"></script>
+	<script src="/javascripts/angular/selectize.js"></script>
+
+
+	<script src="/ng/app.js"></script>
+{% endblock %}

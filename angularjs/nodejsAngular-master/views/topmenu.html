@@ -1,0 +1,20 @@
+<ul>
+	<li><a href="/">Home</a></li>
+	{% if user %}
+		<li><a href="/file">File Upload</a></li>
+		<li><a href="/redirect">Redirect</a></li>
+		<li><a href="/download">Download</a></li>
+		<li><a href="/mail">Mail</a></li>
+		<li><a href="/changepwd">Change Password</a></li>
+		<li><a href="/logout">Logout</a></li>
+	{% else %} 
+		<li><a href="/google">Google Login</a></li>
+		<li><a href="/facebook">Facebook Login</a></li>
+		<li><a href="/twitter">Twitter Login</a></li>
+		<li><a href="/linkedin">LinkedIn Login</a></li>
+		<li><a href="/github">Github Login</a></li>
+
+		<li><a href="/login">Login</a></li>		
+		<li><a href="/signup">Signup</a></li>
+	{% endif %}
+</ul>

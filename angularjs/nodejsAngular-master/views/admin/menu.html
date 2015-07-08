@@ -1,0 +1,7 @@
+<ul>
+	<li><a href="/admin">Home</a></li>
+	{% if user %}
+		<li><a href="/admin/changepwd">Change Password</a></li>
+		<li><a href="/admin/logout">Logout</a></li>
+	{% endif %}
+</ul>

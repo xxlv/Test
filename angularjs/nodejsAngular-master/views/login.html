@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+	{% block header %}
+		<!-- // <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
+		<!-- // <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+		<script src="/javascripts/jquery.min.js"></script>
+	{% endblock %}
+	{% block content %}
+		{% if message %} {{message}} {% endif %}
+		{% if error %} {{error}} {% endif %}
+		<h1>Login</h1>
+		<form method="POST">
+			<div>
+				<label>E-mail</label>
+				<input type="email" name="email" required>
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" name="password" pattern=".{8,25}" required title="8 to 25 characters">
+			</div>
+			<div>
+				<input type="submit" value="login">
+			</div>
+		</form>
+		<a href="/forgotpasswd">Forgot Password</a>
+	{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block header %}
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/jqueryvalidate/jquery.validate.js"></script>
+	<script src="/javascripts/validate.js"></script>
+{% endblock %}
+{% block content %}
+	{% if message %} {{message}} {% endif %}
+	{% if error %} {{error}} {% endif %}
+	<form method="post" id="reset">
+		{{resetPasswordForm.toHTML() | safe}}
+		<div><input type="submit" value="Change Password"></div>
+	</form>
+{% endblock %}

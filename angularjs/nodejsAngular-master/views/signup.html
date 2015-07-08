@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+	{% block header %}
+		<script src="/javascripts/jquery.min.js"></script>
+		<script src="/javascripts/jqueryvalidate/jquery.validate.js"></script>
+		<!-- <script src="/javascripts/validate.js"></script> -->
+	{% endblock %}
+	{% block content %}
+		{% if message %} {{message}} {% endif %}
+		{% if error %} {{error}} {% endif %}
+		<h1>{{type}}</h1>
+		<form method="POST" id="signup">
+			{% for key, item in signupForm.fields %}
+				{{ item.toHTML() | safe }}
+				{% asyncEach item in errors %}
+					{% if item[key] %}
+						{{item[key]}}
+					{% endif %}
+				{% endeach %}
+			{% endfor %}
+			<div><input type="submit" value="Signup"></div>
+		</form>
+	{% endblock %}
