@@ -1,0 +1,36 @@
+[
+    {
+        "name": "xxlv/hero",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/xxlv/hero.git",
+            "reference": "bafc0232032e348bb36d6bf272190eeb6b305af9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/xxlv/hero/zipball/bafc0232032e348bb36d6bf272190eeb6b305af9",
+            "reference": "bafc0232032e348bb36d6bf272190eeb6b305af9",
+            "shasum": ""
+        },
+        "time": "2016-04-14 14:36:40",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Hero\\": "src/Hero"
+            }
+        },
+        "authors": [
+            {
+                "name": "x",
+                "email": "lvxiang119@gmail.com"
+            }
+        ],
+        "support": {
+            "source": "https://github.com/xxlv/hero/tree/master",
+            "issues": "https://github.com/xxlv/hero/issues"
+        }
+    }
+]

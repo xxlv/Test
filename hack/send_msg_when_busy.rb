@@ -1,22 +1,21 @@
 #!/usr/bin/env ruby
-exit unless `who -q`.include? ENV['USER']
-
+exit unless `who -q`.include? 'xxlv'
 require 'twilio-ruby'
+
 #require 'mail'
 account_sid = 'ACa5e472c3d10fe19b37f5201fb1fd1c08'
 auth_token  = '63320952620328228858f46b05ae8cb5'
 
 my_number  = '+12075187161'
 her_number = '+8617086894013'
-
 @client = Twilio::REST::Client.new account_sid, auth_token
 
 
 reason = [
-  'honey,可能晚点儿回家！',
-  '我还有一点事要处理，你先睡吧！',
-  '亲爱的，晚安～',
-  '今天要加班',
+  '回答在牛奶箱里！',
+  '我还有一点事要处理！',
+  '我去火星',
+  '晚点回去'
 ].sample
 
 

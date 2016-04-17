@@ -1,0 +1,14 @@
+{
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "https://github.com/xxlv/hero.git"
+        },
+        {
+            "packagist":false
+        }
+    ],
+    "require": {
+        "xxlv/hero":"dev-master"
+    }
+}
