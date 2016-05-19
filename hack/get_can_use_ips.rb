@@ -9,7 +9,7 @@ def up?(host)
     check.ping?
 end
 
-200.upto(255) do |i|
+206.upto(255) do |i|
     200.upto(255) do |j|
         ip="192.168.#{i}.#{j}"
         unless up?(ip)

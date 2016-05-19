@@ -1,0 +1,15 @@
+{
+  "repositories": {
+
+    "0": {
+      "type": "vcs",
+      "url": "git@gitlab.dxy.net:xxlv/tools-webbuild.git"
+    },
+
+    "packagist": false
+  },
+
+  "require": {
+      "vst/webbuild": "dev-master"
+  }
+}

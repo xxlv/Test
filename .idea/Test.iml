@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 11/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 12/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 4/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 6/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 6/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 10/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 5/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 9/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 7/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 12/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 13/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 13/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 11/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 4/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 2/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 8/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 7/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 5/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 9/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 8/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 2/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 10/api/composer.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 11/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 12/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 4/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 6/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 6/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 10/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 5/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 9/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 7/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 12/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 13/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 13/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 11/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 4/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 2/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 8/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 7/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 5/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 9/client/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 8/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 2/api/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/Zend Framework 2 Application Development/2100OS_Code.zip/ZF2-Book-Code-master/Chapter 10/api/composer.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

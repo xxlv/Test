@@ -1,0 +1,47 @@
+
+
+1 什么是composer
+
+composer是一个依赖管理工具。类似于npm或者bundle.
+------------------------------------------------------------
+
+
+2 为什么要用composer？
+
+降低工作量和消除手动维护带来的错误.
+
+--------------------------------------------------------------
+
+
+3 如何开始？
+
+1 创建一个composer
+
+2 打包到github上(location)
+
+3 使用自己的composer
+
+4 不使用远端仓库，直接使用指定的git
+
+5 namespace,PSR-4,和classmap
+
+6 相关地址
+
+http://www.php-fig.org/ FIG小组
+https://packagist.org/ package
+https://getcomposer.org/  官网
+
+https://github.com/composer/installers#current-supported-types  自定义类型来安装到不同的位置
+
+http://docs.phpcomposer.com/articles/handling-private-packages-with-satis.html  satis处理私有资源
+
+http://docs.phpcomposer.com/articles/scripts.html 特定事件执行脚本
+
+https://phphub.org/topics/85  解决太慢
+
+------------------—       
+第三套模版 >>缓存方案
+o2o
+分支管理
+master主数据接口地址
+-------------------
