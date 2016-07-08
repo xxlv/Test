@@ -1,4 +1,8 @@
 <?php
 
-$data='http://www.baidu.com';
-var_dump(strpos($data,'ttp'));
+
+srand(2);
+
+
+$my_rand=rand(1,10000);
+echo $my_rand;
