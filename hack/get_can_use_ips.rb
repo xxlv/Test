@@ -9,9 +9,10 @@ def up?(host)
     check.ping?
 end
 
-206.upto(255) do |i|
+208.upto(255) do |i|
     200.upto(255) do |j|
         ip="192.168.#{i}.#{j}"
+        puts "Check #{ip} "
         unless up?(ip)
             puts "Found IP: #{ip}"
             can_use_ips << ip
