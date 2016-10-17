@@ -1,0 +1,12 @@
+[11-Oct-2016 02:08:51 UTC] PHP Fatal error:  Call to undefined function boolvar() in /work/learn/Test/php/mardo.php on line 8
+[11-Oct-2016 02:08:51 UTC] PHP Stack trace:
+[11-Oct-2016 02:08:51 UTC] PHP   1. {main}() /work/learn/Test/php/mardo.php:0
+[11-Oct-2016 02:08:51 UTC] PHP   2. test_a() /work/learn/Test/php/mardo.php:17
+[11-Oct-2016 02:09:23 UTC] PHP Fatal error:  Call to undefined function bool() in /work/learn/Test/php/mardo.php on line 8
+[11-Oct-2016 02:09:23 UTC] PHP Stack trace:
+[11-Oct-2016 02:09:23 UTC] PHP   1. {main}() /work/learn/Test/php/mardo.php:0
+[11-Oct-2016 02:09:23 UTC] PHP   2. test_a() /work/learn/Test/php/mardo.php:17
+[11-Oct-2016 02:09:29 UTC] PHP Fatal error:  Call to undefined function bool() in /work/learn/Test/php/mardo.php on line 8
+[11-Oct-2016 02:09:29 UTC] PHP Stack trace:
+[11-Oct-2016 02:09:29 UTC] PHP   1. {main}() /work/learn/Test/php/mardo.php:0
+[11-Oct-2016 02:09:29 UTC] PHP   2. test_a() /work/learn/Test/php/mardo.php:17
