@@ -1,0 +1,10 @@
+#include <hellomake.h>
+
+
+int main(){
+  
+
+  myPrintHellomake();
+  return 0;
+
+}
